@@ -6,6 +6,7 @@ import {
     faYoutube,
     faFacebook,
     faTwitter,
+    faGithub,
     faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -21,7 +22,7 @@ export default function NaveBar() {
                     <NavLink to="/post"
                         className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover text-red-200 hover:text-green-800"
                         activeClassName="text-red-100 bg-red-700"> Blog Posts</NavLink>
-                    <NavLink to="/projects"
+                    <NavLink to="/project"
                         className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover text-red-200 hover:text-green-800"
                         activeClassName="text-red-100 bg-red-700"> Projects</NavLink>
                     <NavLink to="/About"
