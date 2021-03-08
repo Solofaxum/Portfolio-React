@@ -14,7 +14,7 @@ export default function SinglePost() {
     const [singlePost, setSinglePost] = useState(null);
     const { slug } = useParams();
     useEffect(() => {
-        sanityClient.fetch(`*[slug.current == "${slug}]{
+        sanityClient.fetch(`*[slug.current == "${slug}"]{
       title,
       _id,
       slug,
@@ -27,7 +27,7 @@ export default function SinglePost() {
       body,
       "name": author->name,
       "authorImage":author->image,  
-    }`).then((data) => setSinglePost(data[0]))
+    }`).then(data => setSinglePost(data[0]))
             .catch(console.error);
     }, [slug])
 
@@ -44,7 +44,10 @@ export default function SinglePost() {
                                 {singlePost.title}
                             </h1>
                             <div className="flex justify-center text-gray-800">
-                                <img src={urlFor(singlePost.authorImage).url()} />
+                                <img src={urlFor(singlePost.authorImage).url()} 
+                                  alt={singlePost.name}
+                                  className="w-10 h-10 rounded-full"
+                                />
                                 <p className="cursive flex items-center pl-2 text-2xl">{singlePost.name}</p>
                             </div>
                         </div>
